@@ -1,0 +1,9 @@
+{
+    "date": "Mon Aug 27 10:43:02 CEST 2018",
+    "name": "OpenServiceBroker",
+    "format": "xml",
+    "description": "Open Service Broker implementation for Simplicité(R)",
+    "repository": {},
+    "version": "4.0",
+    "dependencies": [{"Simplicite": "4.0"}]
+}

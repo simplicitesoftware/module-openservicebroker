@@ -1,0 +1,779 @@
+components:
+  schemas:
+    OSBPlan:
+      type: object
+      properties:
+        osbPlnSrvId__osbSrvName:
+          description: Service name
+          type: string
+        osbPlnUUID:
+          description: Plan UUID
+          type: string
+        osbPlnName:
+          description: Plan name
+          type: string
+        osbPlnFree:
+          description: Free?
+          type: boolean
+        osbPlnShortDescription:
+          description: Short description
+          type: string
+        osbPlnSrvId:
+          description: Service
+          type: string
+        row_id:
+          description: ID
+          type: string
+        osbPlnLongDescription:
+          description: Long description
+          type: string
+    OSBService:
+      type: object
+      properties:
+        osbSrvDocumentationURL:
+          description: Documentation URL
+          type: string
+        osbSrvTermsURL:
+          description: Terms URL
+          type: string
+        osbSrvPlanUpdatable:
+          description: Plan updatable?
+          type: boolean
+        osbSrvLongDescription:
+          description: Long description
+          type: string
+        osbSrvUUID:
+          description: Service UUID
+          type: string
+        osbSrvInstructionsURL:
+          description: Instructions URL
+          type: string
+        osbSrvSupportURL:
+          description: Support URL
+          type: string
+        row_id:
+          description: ID
+          type: string
+        osbSrvBindable:
+          description: Bindable?
+          type: boolean
+        osbSrvName:
+          description: Service name
+          type: string
+        osbSrvShortDescription:
+          description: Short description
+          type: string
+        osbSrvTags:
+          description: Tags
+          type: string
+    ArrayOfOSBPlan:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSBPlan'
+    ArrayOfOSBService:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSBService'
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http
+    bearerAuth:
+      bearerFormat: Simplicite token
+      scheme: bearer
+      type: http
+servers:
+- url: https://dev40.dev.simplicite.io/api
+openapi: 3.0.0
+paths:
+  /rest/OSBService/{row_id}:
+    post:
+      security:
+      - bearerAuth: []
+      description: Create business object record
+      operationId: obj-osbservice-create
+      responses:
+        '200':
+          description: Created business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OSBService'
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: osbSrvName
+        description: Service name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvUUID
+        description: Service UUID
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvShortDescription
+        description: Short description
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvLongDescription
+        description: Long description
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbSrvBindable
+        description: Bindable?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbSrvPlanUpdatable
+        description: Plan updatable?
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvDocumentationURL
+        description: Documentation URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvInstructionsURL
+        description: Instructions URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvSupportURL
+        description: Support URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvTermsURL
+        description: Terms URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvTags
+        description: Tags
+        required: false
+      tags:
+      - OSBService
+    get:
+      security:
+      - bearerAuth: []
+      description: Get business object record
+      operationId: obj-osbservice-get
+      responses:
+        '200':
+          description: Business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OSBService'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_documents
+        description: Inline documents?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_objects
+        description: Inline objects?
+        required: false
+      tags:
+      - OSBService
+    delete:
+      security:
+      - bearerAuth: []
+      description: Delete business object record
+      operationId: obj-osbservice-delete
+      responses:
+        '200':
+          description: Business object deletion confirmation
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      tags:
+      - OSBService
+    put:
+      security:
+      - bearerAuth: []
+      description: Update business object record
+      operationId: obj-osbservice-update
+      responses:
+        '200':
+          description: Updated business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OSBService'
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: osbSrvName
+        description: Service name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvUUID
+        description: Service UUID
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvShortDescription
+        description: Short description
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvLongDescription
+        description: Long description
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbSrvBindable
+        description: Bindable?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbSrvPlanUpdatable
+        description: Plan updatable?
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvDocumentationURL
+        description: Documentation URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvInstructionsURL
+        description: Instructions URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvSupportURL
+        description: Support URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvTermsURL
+        description: Terms URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvTags
+        description: Tags
+        required: false
+      tags:
+      - OSBService
+  /login:
+    get:
+      security:
+      - basicAuth: []
+      description: Login
+      operationId: login
+      responses:
+        '200':
+          description: User token
+          content:
+            application/json: {}
+            text/plain: {}
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+          enum:
+          - json
+          - oauth2
+        in: query
+        name: _output
+        description: Optional output format
+        required: false
+      tags:
+      - Application
+  /rest/OSBPlan/{row_id}:
+    post:
+      security:
+      - bearerAuth: []
+      description: Create business object record
+      operationId: obj-osbplan-create
+      responses:
+        '200':
+          description: Created business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OSBPlan'
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: osbPlnSrvId
+        description: Service
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnSrvId__osbSrvName
+        description: Service name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnName
+        description: Plan name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnUUID
+        description: Plan UUID
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnShortDescription
+        description: Short description
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnLongDescription
+        description: Long description
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbPlnFree
+        description: Free?
+        required: false
+      tags:
+      - OSBPlan
+    get:
+      security:
+      - bearerAuth: []
+      description: Get business object record
+      operationId: obj-osbplan-get
+      responses:
+        '200':
+          description: Business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OSBPlan'
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_documents
+        description: Inline documents?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_thumbnails
+        description: Inline documents' thumbnails?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _inline_objects
+        description: Inline objects?
+        required: false
+      tags:
+      - OSBPlan
+    delete:
+      security:
+      - bearerAuth: []
+      description: Delete business object record
+      operationId: obj-osbplan-delete
+      responses:
+        '200':
+          description: Business object deletion confirmation
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      tags:
+      - OSBPlan
+    put:
+      security:
+      - bearerAuth: []
+      description: Update business object record
+      operationId: obj-osbplan-update
+      responses:
+        '200':
+          description: Updated business object record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OSBPlan'
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: string
+        in: path
+        name: row_id
+        description: row ID
+        required: true
+      - schema:
+          type: string
+        in: query
+        name: osbPlnSrvId
+        description: Service
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnSrvId__osbSrvName
+        description: Service name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnName
+        description: Plan name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnUUID
+        description: Plan UUID
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnShortDescription
+        description: Short description
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnLongDescription
+        description: Long description
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbPlnFree
+        description: Free?
+        required: false
+      tags:
+      - OSBPlan
+  /logout:
+    get:
+      security:
+      - bearerAuth: []
+      description: Logout
+      operationId: logout
+      responses:
+        '200':
+          description: Logout confirmation
+          content:
+            application/json: {}
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      tags:
+      - Application
+  /rest:
+    get:
+      security:
+      - bearerAuth: []
+      description: Application session information
+      operationId: info
+      responses:
+        '200':
+          description: Application information
+          content:
+            application/json: {}
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+            text/plain: {}
+      parameters:
+      - schema:
+          type: boolean
+        in: query
+        name: texts
+        description: Texts?
+        required: false
+      tags:
+      - Application
+  /rest/OSBPlan:
+    get:
+      security:
+      - bearerAuth: []
+      description: Get business object metadata or search records
+      operationId: obj-osbplan-search
+      responses:
+        '200':
+          description: Business object metadata or records of search result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfOSBPlan'
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: boolean
+        in: query
+        name: _metadata
+        description: Metadata?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _doc
+        description: Documentation?
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnSrvId
+        description: Search filter for Service
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnSrvId__osbSrvName
+        description: Search filter for Service name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnName
+        description: Search filter for Plan name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnUUID
+        description: Search filter for Plan UUID
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnShortDescription
+        description: Search filter for Short description
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbPlnLongDescription
+        description: Search filter for Long description
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbPlnFree
+        description: Search filter for Free?
+        required: false
+      tags:
+      - OSBPlan
+  /rest/OSBService:
+    get:
+      security:
+      - bearerAuth: []
+      description: Get business object metadata or search records
+      operationId: obj-osbservice-search
+      responses:
+        '200':
+          description: Business object metadata or records of search result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfOSBService'
+        '401':
+          description: Authentication error
+          content:
+            application/json: {}
+      parameters:
+      - schema:
+          type: boolean
+        in: query
+        name: _metadata
+        description: Metadata?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: _doc
+        description: Documentation?
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvName
+        description: Search filter for Service name
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvUUID
+        description: Search filter for Service UUID
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvShortDescription
+        description: Search filter for Short description
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvLongDescription
+        description: Search filter for Long description
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbSrvBindable
+        description: Search filter for Bindable?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbSrvPlanUpdatable
+        description: Search filter for Plan updatable?
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvDocumentationURL
+        description: Search filter for Documentation URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvInstructionsURL
+        description: Search filter for Instructions URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvSupportURL
+        description: Search filter for Support URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvTermsURL
+        description: Search filter for Terms URL
+        required: false
+      - schema:
+          type: string
+        in: query
+        name: osbSrvTags
+        description: Search filter for Tags
+        required: false
+      tags:
+      - OSBService
+info:
+  license:
+    name: Simplicite license
+    url: http://www.simplicitesoftware.com
+  contact:
+    name: Simplicite Software
+    url: http://www.simplicitesoftware.com
+    email: contact@simplicitesoftware.com
+  description: REST APIs for OpenServiceBroker
+  title: OpenServiceBroker
+  version: '4.0'
