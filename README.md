@@ -52,3 +52,12 @@ Service
 
 No custom action
 
+`osb` external object definition
+--------------------------------
+
+Open Service Broker services
+
+```yaml
+openapi: 3.0.0
+```
+
