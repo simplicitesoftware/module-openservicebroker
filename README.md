@@ -57,11 +57,9 @@ No custom action
 `osb` external object definition
 --------------------------------
 
-Open Service Broker services
+Open Service Broker services.
 
-```yaml
-openapi: 3.0.0
-servers:
-  - [URL]/api/ext/osb
-```
+- URL: `<base URL>/api/ext/osb/v2` (using basic authentication)
+- Services:
+	- `GET /catalog`: catalog
 
