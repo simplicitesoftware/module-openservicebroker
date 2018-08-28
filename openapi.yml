@@ -18,6 +18,9 @@ components:
         osbPlnShortDescription:
           description: Short description
           type: string
+        osbPlnActive:
+          description: Active?
+          type: boolean
         osbPlnSrvId:
           description: Service
           type: string
@@ -30,26 +33,35 @@ components:
     OSBService:
       type: object
       properties:
-        osbSrvDocumentationURL:
-          description: Documentation URL
-          type: string
         osbSrvTermsURL:
           description: Terms URL
           type: string
-        osbSrvPlanUpdatable:
-          description: Plan updatable?
-          type: boolean
         osbSrvLongDescription:
           description: Long description
           type: string
         osbSrvUUID:
           description: Service UUID
           type: string
-        osbSrvInstructionsURL:
-          description: Instructions URL
-          type: string
         osbSrvSupportURL:
           description: Support URL
+          type: string
+        osbSrvShortDescription:
+          description: Short description
+          type: string
+        osbSrvTags:
+          description: Tags
+          type: string
+        osbSrvDocumentationURL:
+          description: Documentation URL
+          type: string
+        osbSrvPlanUpdatable:
+          description: Plan updatable?
+          type: boolean
+        osbSrvActive:
+          description: Active?
+          type: boolean
+        osbSrvInstructionsURL:
+          description: Instructions URL
           type: string
         row_id:
           description: ID
@@ -59,12 +71,6 @@ components:
           type: boolean
         osbSrvName:
           description: Service name
-          type: string
-        osbSrvShortDescription:
-          description: Short description
-          type: string
-        osbSrvTags:
-          description: Tags
           type: string
     ArrayOfOSBPlan:
       type: array
@@ -175,6 +181,12 @@ paths:
         in: query
         name: osbSrvTags
         description: Tags
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbSrvActive
+        description: Active?
         required: false
       tags:
       - OSBService
@@ -327,6 +339,12 @@ paths:
         name: osbSrvTags
         description: Tags
         required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbSrvActive
+        description: Active?
+        required: false
       tags:
       - OSBService
   /login:
@@ -422,6 +440,12 @@ paths:
         in: query
         name: osbPlnFree
         description: Free?
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbPlnActive
+        description: Active?
         required: false
       tags:
       - OSBPlan
@@ -550,6 +574,12 @@ paths:
         name: osbPlnFree
         description: Free?
         required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbPlnActive
+        description: Active?
+        required: false
       tags:
       - OSBPlan
   /logout:
@@ -666,6 +696,12 @@ paths:
         name: osbPlnFree
         description: Search filter for Free?
         required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbPlnActive
+        description: Search filter for Active?
+        required: false
       tags:
       - OSBPlan
   /rest/OSBService:
@@ -763,6 +799,12 @@ paths:
         in: query
         name: osbSrvTags
         description: Search filter for Tags
+        required: false
+      - schema:
+          type: boolean
+        in: query
+        name: osbSrvActive
+        description: Search filter for Active?
         required: false
       tags:
       - OSBService
