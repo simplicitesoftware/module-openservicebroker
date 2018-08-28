@@ -4,7 +4,13 @@
 `OpenServiceBroker` module definition
 =====================================
 
-Open Service Broker implementation for Simplicité(R)
+OpenServiceBroker (OSB) implementation for Simplicité(R).
+
+OSB resources:
+
+- [OpenServiceBroker specs](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)
+- [OpenServiceBroker OpenAPI schema](https://raw.githubusercontent.com/openservicebrokerapi/servicebroker/master/openapi.yaml)
+- [IBM examples](https://github.com/IBM/sample-resource-service-brokers)
 
 `OSBPlan` business object definition
 ------------------------------------

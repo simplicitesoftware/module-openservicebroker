@@ -7,8 +7,14 @@
 		<mdl_name>OpenServiceBroker</mdl_name>
 		<mdl_version>4.0</mdl_version>
 		<mdl_url><![CDATA[https://www.simplicite.io/resources/modules/openservicebroker-app-4.0.xml]]></mdl_url>
-		<mdl_lastupd>2018-08-27 23:24:53</mdl_lastupd>
-		<mdl_comment><![CDATA[Open Service Broker implementation for Simplicité(R)]]></mdl_comment>
+		<mdl_lastupd>2018-08-28 12:50:09</mdl_lastupd>
+		<mdl_comment><![CDATA[OpenServiceBroker (OSB) implementation for Simplicité(R).
+
+OSB resources:
+
+- [OpenServiceBroker specs](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)
+- [OpenServiceBroker OpenAPI schema](https://raw.githubusercontent.com/openservicebrokerapi/servicebroker/master/openapi.yaml)
+- [IBM examples](https://github.com/IBM/sample-resource-service-brokers)]]></mdl_comment>
 	</data>
 </object>
 <object>
