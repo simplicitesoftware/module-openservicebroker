@@ -78,20 +78,37 @@ osb.display = function(params) {
 			return new JSONObject().put("services", s).toString(2);
 		} else if ((method=="PUT" || method=="DELETE") && operation=="service_instances") {
 			if (!parts.size())
-				return osb.error.call(this, 400, "No instance ID for operation " + operation);
+				return osb.error.call(this, 400, "No service instance ID for operation " + operation);
 			instanceID = parts.get(0);
 			console.log("Instance ID = " + instanceID);
 			parts.remove(0);
-			if (parts && parts.get(0)=="service_bindings") {
+			if (parts.size() && parts.get(0)=="service_bindings") {
 				parts.remove(0);
 				if (!parts.size())
-					return osb.error.call(this, 400, "No binding ID for instance ID " + instanceID + " and operation " + operation);
+					return osb.error.call(this, 400, "No binding ID for service instance ID " + instanceID + " and operation " + operation);
 				bindingID = parts.get(0);
 				console.log("Binding ID = " + instanceID);
 				parts.remove(0);
-				console.log("TODO: binding " + method);				
+				if (method=="DELETE") {
+					console.log("TODO: delete binding " + bindingID + " for insance " + instanceID);
+					return JSONObject().put("description", "Deleted binding " + bindingID + " for service instance " + instanceID);
+				} else { // PUT
+					console.log("TODO: create/update binding " + bindingID + " for service instance " + instanceID);
+					var req = params.getJSONObject();
+					console.log(req);
+					return new JSONObject().put("request", req);
+				}
+				console.log("TODO: binding/" + method);				
 			} else {
-				console.log("TODO: instance: " + method);				
+				if (method=="DELETE") {
+					console.log("TODO: delete instance " + instanceID);
+					return JSONObject().put("description", "Deleted service instance " + instanceID);
+				} else { // PUT
+					console.log("TODO: create/update instance " + instanceID);
+					req = params.getJSONObject();
+					console.log(req);
+					return new JSONObject().put("request", req);
+				}
 			}
 		} else
 			return osb.error.call(this, 404, "Unknown operation " + operation + " for method " + method);

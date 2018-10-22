@@ -1,8 +1,8 @@
 {
-    "date": "Tue Aug 28 12:50:09 CEST 2018",
+    "date": "Mon Oct 22 14:59:38 CEST 2018",
     "name": "OpenServiceBroker",
     "format": "xml",
-    "description": "OpenServiceBroker (OSB) implementation for Simplicité(R).\n\nOSB resources:\n\n- [OpenServiceBroker specs](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)\n- [OpenServiceBroker OpenAPI schema](https://raw.githubusercontent.com/openservicebrokerapi/servicebroker/master/openapi.yaml)\n- [IBM examples](https://github.com/IBM/sample-resource-service-brokers)",
+    "description": "OpenServiceBroker (OSB) implementation for Simplicité(R).\n\nOSB resources:\n\n- [OpenServiceBroker specs](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)\n- [OpenServiceBroker OpenAPI schema](https://raw.githubusercontent.com/openservicebrokerapi/servicebroker/master/openapi.yaml)\n- [IBM examples](https://github.com/IBM/sample-resource-service-brokers)\n\nSonarqube analysis: `sonar-scanner -Dsonar.exclusions=\"**.min.js,**.min.css`",
     "repository": {
         "type": "url",
         "url": "https://www.simplicite.io/resources/modules/openservicebroker-app-4.0.xml"

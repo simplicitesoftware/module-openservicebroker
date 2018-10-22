@@ -7,14 +7,16 @@
 		<mdl_name>OpenServiceBroker</mdl_name>
 		<mdl_version>4.0</mdl_version>
 		<mdl_url><![CDATA[https://www.simplicite.io/resources/modules/openservicebroker-app-4.0.xml]]></mdl_url>
-		<mdl_lastupd>2018-08-28 12:50:09</mdl_lastupd>
+		<mdl_lastupd>2018-10-22 14:59:38</mdl_lastupd>
 		<mdl_comment><![CDATA[OpenServiceBroker (OSB) implementation for Simplicité(R).
 
 OSB resources:
 
 - [OpenServiceBroker specs](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)
 - [OpenServiceBroker OpenAPI schema](https://raw.githubusercontent.com/openservicebrokerapi/servicebroker/master/openapi.yaml)
-- [IBM examples](https://github.com/IBM/sample-resource-service-brokers)]]></mdl_comment>
+- [IBM examples](https://github.com/IBM/sample-resource-service-brokers)
+
+Sonarqube analysis: `sonar-scanner -Dsonar.exclusions="**.min.js,**.min.css`]]></mdl_comment>
 	</data>
 </object>
 <object>
@@ -162,6 +164,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Plan active?]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -195,6 +198,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Is plan free?]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -228,6 +232,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Plan long description]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -261,6 +266,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Plan name]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -294,6 +300,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Plan short description]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -327,6 +334,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment/>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -360,6 +368,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Plan UUID]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -393,6 +402,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Service active?]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -426,6 +436,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Bindable service?]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -459,6 +470,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Service documentation UR]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -492,6 +504,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Service instructions URL]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -525,6 +538,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Service long description]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -558,6 +572,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Service name]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -591,6 +606,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Plan updatable?]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -624,6 +640,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Service short description]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -657,6 +674,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Service support URL]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -690,6 +708,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Comma-separated list of tags for service]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -723,6 +742,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Service terms URL]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -756,6 +776,7 @@ OSB resources:
 		<fld_calc/>
 		<fld_objlist/>
 		<fld_comment><![CDATA[Service UUID]]></fld_comment>
+		<fld_classification/>
 		<row_module_id.mdl_name>OpenServiceBroker</row_module_id.mdl_name>
 	</data>
 </object>
@@ -827,7 +848,7 @@ OSB resources:
 
 - URL: `<base URL>/api/ext/osb/v2` (using basic authentication)
 - Services:
-	- `GET /catalog`: catalog]]></obe_comment>
+	- `GET /catalog`: get product catalog]]></obe_comment>
 		<obe_help/>
 		<obe_class/>
 		<obe_script_id>ObjectExternal/osb.js</obe_script_id>
