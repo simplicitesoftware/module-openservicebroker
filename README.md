@@ -12,8 +12,6 @@ OSB resources:
 - [OpenServiceBroker OpenAPI schema](https://raw.githubusercontent.com/openservicebrokerapi/servicebroker/master/openapi.yaml)
 - [IBM examples](https://github.com/IBM/sample-resource-service-brokers)
 
-Sonarqube analysis: `sonar-scanner -Dsonar.exclusions="**.min.js,**.min.css`
-
 `OSBPlan` business object definition
 ------------------------------------
 
