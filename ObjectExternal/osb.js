@@ -98,7 +98,6 @@ osb.display = function(params) {
 					console.log(req);
 					return new JSONObject().put("request", req);
 				}
-				console.log("TODO: binding/" + method);				
 			} else {
 				if (method=="DELETE") {
 					console.log("TODO: delete instance " + instanceID);
@@ -110,8 +109,9 @@ osb.display = function(params) {
 					return new JSONObject().put("request", req);
 				}
 			}
-		} else
+		} else {
 			return osb.error.call(this, 404, "Unknown operation " + operation + " for method " + method);
+		}
 	} catch(e) {
 		console.error(e);
 		return osb.error.call(this, 500, e.message);
